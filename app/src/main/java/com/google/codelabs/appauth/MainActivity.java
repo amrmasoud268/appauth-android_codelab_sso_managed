@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         if (response != null) {
             Log.i(LOG_TAG, String.format("Handled Authorization Response %s ", authState.toJsonString()));
 
-            NetworkUtils.sslFactory();
+//            NetworkUtils.sslFactory();
 
             AuthorizationService service = new AuthorizationService(this);
             service.performTokenRequest(response.createTokenExchangeRequest(), new AuthorizationService.TokenResponseCallback() {
@@ -281,8 +281,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             AuthorizationServiceConfiguration serviceConfiguration = new AuthorizationServiceConfiguration(
-                    Uri.parse("https://qa1.vodafone.com.eg/auth/realms/vf-realm/protocol/openid-connect/auth") /* auth endpoint */,
-                    Uri.parse("https://qa1.vodafone.com.eg/ar/KClogin") /* token endpoint */
+                    Uri.parse("https://test1.vodafone.com.eg/auth/realms/vf-realm/protocol/openid-connect/auth") /* auth endpoint */,
+                    Uri.parse("https://test1.vodafone.com.eg/ar/KClogin") /* token endpoint */
             );
             AuthorizationService authorizationService = new AuthorizationService(view.getContext());
             String clientId = "my-vodafone-app"; /*client Id*/
